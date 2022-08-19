@@ -30,6 +30,9 @@ optional arguments:
 }
 ```
 
+## Code style
+⚠️ To format and lint already modified code, run **[./format.sh](format.sh)**
+
 ## License
 
 See the [LICENSE](LICENSE) file for license rights and limitations (MIT).

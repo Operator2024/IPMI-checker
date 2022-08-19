@@ -1,15 +1,14 @@
 #!/usr/bin/env python3
 # -*- coding=utf-8 -*-
-
-import argparse
 import os
 
 __version__ = os.environ["VER"] if os.environ.get("VER") else "0.1.0"
 
-__author__ = ""
+__author__ = "Vladimir Belomestnykh aka Operator2024"
 
 __license__ = "MIT"
 
+import argparse
 import json
 import re
 from io import BufferedReader
