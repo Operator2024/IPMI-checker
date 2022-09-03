@@ -2,7 +2,7 @@
 # -*- coding=utf-8 -*-
 import os
 
-__version__ = os.environ["VER"] if os.environ.get("VER") else "0.1.0"
+__version__ = os.environ["VER"] if os.environ.get("VER") else "0.1.1"
 
 __author__ = "Vladimir Belomestnykh aka Operator2024"
 
@@ -70,12 +70,13 @@ def main(channel: Text = "") -> Optional[Dict]:
 
 
 if __name__ == "__main__":
-    description = "IPMI/BMC inventory system aka IPMI-checker"
-    parser = argparse.ArgumentParser(prog="IPMI-checker")
+    _name = "IPMI-scanner"
+    description = f"IPMI/BMC inventory system aka {_name}"
+    parser = argparse.ArgumentParser(prog=_name)
     parser.add_argument(
         "--version",
         "-V",
-        help="This key allows you to get the current version",
+        help="this key allows you to get the current version",
         version=(
             f"{description}, {__license__} license, {__author__}, version:"
             f" {__version__} "
@@ -95,5 +96,4 @@ if __name__ == "__main__":
                     Next = True
             if not Next:
                 break
-        if isinstance(ipmi_info, dict):
-            print(json.dumps(ipmi_info))
+        print(json.dumps({_name: [ipmi_info]}))
