@@ -9,3 +9,4 @@ COPY main.py  requirements.txt enrtypoint.sh /workdir/
 WORKDIR "/workdir"
 RUN chmod +x enrtypoint.sh
 ENTRYPOINT [ "./enrtypoint.sh" ]
+CMD [ "$1" ]

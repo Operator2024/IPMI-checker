@@ -10,17 +10,14 @@ optional arguments:
   --version, -V  This key allows you to get the current version
 ```
 
-**Example #1**: Raw result without 'jq'
+**Example #1**:
 
 ```bash
-> python3 main.py
-> {"IPv4": "10.201.7.30", "Mask": "255.255.255.0", "MAC": "a4:bf:01:64:e8:aa", "Gateway": "10.201.7.254", "Channel": "3"}
+> docker build -t ipmi-scanner .
+> docker run -ti --rm --privileged ipmi-scanner
 ```
 
-**Example #2**: 
-
-```bash
-> python3 main.py | jq
+```json
 > {
   "IPv4": "10.245.0.11",
   "Channel": "1",
@@ -30,17 +27,21 @@ optional arguments:
 }
 ```
 
-**Example #3**: Empty result
+**Example #2**: Empty result
 
 ```bash
-> python3 main.py | jq
+> docker build -t ipmi-scanner .
+> docker run -ti --rm --privileged ipmi-scanner
+```
+
+```json
 {
   "IPMI-scanner": [
     {}
   ]
 }
 ```
-To format and check already modified code, run , but set 's' before running if necessary!
+
 ## Code style
 ⚠️ To format and lint already modified code, run **[./format.sh](format.sh)**, but set **[requirements.txt](requirements.txt)** before running if necessrary
 
